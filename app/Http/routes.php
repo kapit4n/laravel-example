@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/hi', function () {
     return View::make('hi', array('name' => 'Luis'))->nest('subview', 'child.hi');;
 });
+
+Route::get('/hello', 'HelloController@showHello');
