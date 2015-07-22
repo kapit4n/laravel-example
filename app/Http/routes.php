@@ -20,3 +20,5 @@ Route::get('/hi', function () {
 });
 
 Route::get('/hello', 'HelloController@showHello');
+
+Route::controller('hi5', 'Hi5Controller');
