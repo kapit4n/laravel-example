@@ -39,6 +39,9 @@
         <div class="container">
             <div class="content">
                 <div class="title">Hi <?php echo $name; ?></div>
+                <div>
+                    <?php echo $subview; ?>
+                </div>
             </div>
         </div>
     </body>
