@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Person;
 
-class PersonController extends Controller
+class personViewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,8 @@ class PersonController extends Controller
      */
     public function index()
     {
-        return Person::all();
+        $persons = $person = Person::all();
+        return view('person.list', array('persons' => $persons));
     }
 
     /**
@@ -27,7 +28,7 @@ class PersonController extends Controller
      */
     public function create()
     {
-        //
+         return view('person.create');
     }
 
     /**
@@ -39,10 +40,10 @@ class PersonController extends Controller
     public function store(Request $request)
     {
         $person = new Person;
-        $person->name = 'Person Name';
-        $person->lastName = 'Person Name';
-        $person->email = 'Person Name';
-
+        $person->name = $request->input('name');
+        $person->lastName = $request->input('last_name');
+        $person->fullName = $request->input('name') + ' ' + $request->input('last_name');
+        $person->email = $request->input('email');
         $person->save();
         return 'saved';
     }
@@ -55,7 +56,8 @@ class PersonController extends Controller
      */
     public function show($id)
     {
-        //
+        $person = Person::find($id);
+        return view('person.show', array('person' => $person));
     }
 
     /**
@@ -66,7 +68,7 @@ class PersonController extends Controller
      */
     public function edit($id)
     {
-        //
+         return view('person.edit');
     }
 
     /**

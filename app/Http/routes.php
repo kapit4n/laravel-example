@@ -25,6 +25,4 @@ Route::controller('hi5', 'Hi5Controller');
 
 Route::resource('photo', 'PhotoController');
 
-Route::resource('person', 'PersonViewController');
-
-Route::resource('person-api', 'PersonController');
+Route::resource('person', 'PersonController');
