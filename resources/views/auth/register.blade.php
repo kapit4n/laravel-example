@@ -8,20 +8,28 @@
 </head>
 <body>
     <div class="container">
-        <form method="POST" action="/person">
-            {!! csrf_field() !!}
+        <form role="form"  method="POST" action="/auth/register">
+            
             <div class="form-group">
-                <label for="name">Name</label>
-                <input class="form-control" type="text" name="name" id="name" placeholder="Person Name">
+                Name
+                <input class="form-control" type="text" name="name" value="{{ old('name') }}">
             </div>
+
             <div class="form-group">
-                <label for="last_name">Last Name</label>
-                <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Last Name">
+                Email
+                <input class="form-control" type="email" name="email" value="{{ old('email') }}">
             </div>
+
             <div class="form-group">
-                <label for="email">Email</label>
-                <input class="form-control" type="email" name="email" id="email" placeholder="Email">
+                Password
+                <input class="form-control" type="password" name="password">
             </div>
+
+            <div class="form-group">
+                Confirm Password
+                <input class="form-control" type="password" name="password_confirmation">
+            </div>
+
             <div>
                 <button type="submit" class="btn btn-default">Register</button>
             </div>

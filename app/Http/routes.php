@@ -19,6 +19,15 @@ Route::get('/hi', function () {
     return View::make('hi', array('name' => 'Luis'))->nest('subview', 'child.hi');;
 });
 
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
 Route::get('/hello', 'HelloController@showHello');
 
 Route::controller('hi5', 'Hi5Controller');
@@ -26,3 +35,5 @@ Route::controller('hi5', 'Hi5Controller');
 Route::resource('photo', 'PhotoController');
 
 Route::resource('person', 'PersonController');
+
+Route::resource('dashboard', 'DashboardController');

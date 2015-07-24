@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Person;
 
-class personController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,7 @@ class personController extends Controller
      */
     public function index()
     {
-        $persons = $person = Person::all();
-        return view('person.list', array('persons' => $persons));
+        return view('dashboard.index');
     }
 
     /**
@@ -28,7 +26,7 @@ class personController extends Controller
      */
     public function create()
     {
-         return view('person.create');
+        //
     }
 
     /**
@@ -39,13 +37,7 @@ class personController extends Controller
      */
     public function store(Request $request)
     {
-        $person = new Person;
-        $person->name = $request->input('name');
-        $person->lastName = $request->input('last_name');
-        $person->fullName = $request->input('name') + ' ' + $request->input('last_name');
-        $person->email = $request->input('email');
-        $person->save();
-        return 'saved';
+        //
     }
 
     /**
@@ -56,8 +48,7 @@ class personController extends Controller
      */
     public function show($id)
     {
-        $person = Person::find($id);
-        return view('person.show', array('person' => $person));
+        return view('dashboard.show');
     }
 
     /**
@@ -68,7 +59,7 @@ class personController extends Controller
      */
     public function edit($id)
     {
-         return view('person.edit');
+        //
     }
 
     /**
