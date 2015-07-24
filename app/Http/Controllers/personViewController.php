@@ -17,8 +17,7 @@ class personViewController extends Controller
      */
     public function index()
     {
-        $person = Person::find(1);
-        return view('personview', array('person' => $person));
+        
     }
 
     /**
@@ -50,7 +49,8 @@ class personViewController extends Controller
      */
     public function show($id)
     {
-        //
+        $person = Person::find($id);
+        return view('personview', array('person' => $person));
     }
 
     /**
