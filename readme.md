@@ -1,5 +1,13 @@
 ## Laravel PHP Framework
 
+### Start the application
+php artisan serve
+
+It is working with xampp
+http://localhost:81/index.php/person
+http://localhost:81/index.php/dashboard/1
+
+
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
