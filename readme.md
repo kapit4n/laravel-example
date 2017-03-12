@@ -3,6 +3,7 @@
 ### Start the application
 * composer install
 * php artisan serve
+* php artisan migrate:install
 
 It is working with xampp
 http://localhost:81/index.php/person
