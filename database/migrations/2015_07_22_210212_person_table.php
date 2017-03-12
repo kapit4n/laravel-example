@@ -18,7 +18,7 @@ class PersonTable extends Migration
             $table->string('lastName');
             $table->string('fullName');
             $table->string('email');
-            $table->timestamps();
+            $table->nullableTimestamps();
         });
 
           // Insert some stuff
